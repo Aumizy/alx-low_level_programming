@@ -1,1 +1,1 @@
-0x14 Manipulation
+0x14 bit_manipulation
