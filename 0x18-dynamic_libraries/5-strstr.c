@@ -1,26 +1,26 @@
+#include "main.h"
 /**
-* _strstr - function name
-* @haystack: original string
-* @needle: substring
-*
-* Description: a function that prints the alphabet
-* Return: 0 (success)
-*/
-
+ * _strstr - Entry point
+ * @haystack: input
+ * @needle: input
+ * Return: Always 0 (Success)
+ */
 char *_strstr(char *haystack, char *needle)
 {
+	for (; *haystack != '\0'; haystack++)
+	{
+		char *l = haystack;
+		char *p = needle;
 
-for (; *haystack != '\0'; haystack++)
-{
-while (*haystack == *needle && *needle != '\0')
-{
-haystack++;
-needle++;
-}
-if (*needle == '\0')
-{
-return (haystack);
-}
-}
-return (0);
+		while (*l == *p && *p != '\0')
+		{
+			l++;
+			p++;
+		}
+
+		if (*p == '\0')
+			return (haystack);
+	}
+
+	return (0);
 }

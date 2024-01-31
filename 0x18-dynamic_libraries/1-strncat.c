@@ -1,30 +1,30 @@
 #include "main.h"
-
 /**
-* _strncat - function name
-* @dest: destination str
-* @src: source str
-* @n: max bytes to be copied from src
-*
-* Description: a function that prints the alphabet
-* Return: pointer to the resulting dest
-*/
-
+ * _strncat - concatenate two strings
+ * using at most n bytes from src
+ * @dest: input value
+ * @src: input value
+ * @n: input value
+ *
+ * Return: dest
+ */
 char *_strncat(char *dest, char *src, int n)
 {
-	int d_len, s_len, i;
+	int i;
+	int j;
 
-	d_len = _strlen(dest);
-	s_len = _strlen(src);
-
-	for (i = 0; i < n && i < s_len; i++)
+	i = 0;
+	while (dest[i] != '\0')
 	{
-		dest[d_len] = src[i];
-		d_len++;
-		if (s_len < n)
-		{
-			dest[d_len + 1] = '\0';
-		}
+		i++;
 	}
+	j = 0;
+	while (j < n && src[j] != '\0')
+	{
+	dest[i] = src[j];
+	i++;
+	j++;
+	}
+	dest[i] = '\0';
 	return (dest);
 }

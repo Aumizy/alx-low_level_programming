@@ -1,31 +1,28 @@
+#include "main.h"
 /**
-* _strspn - function name
-* @s: string
-* @accept: substring
-*
-* Description: a function that gets the length of a substring
-* Return: number of bytes
-*/
-
+ * _strspn - Entry point
+ * @s: input
+ * @accept: input
+ * Return: Always 0 (Success)
+ */
 unsigned int _strspn(char *s, char *accept)
 {
-unsigned int count = 0;
-int i = 0;
-while (*s)
-{
-for (i = 0; accept[i]; i++)
-{
-if (*s == accept[i])
-{
-count++;
-break;
-}
-else if (accept[i + 1] == '\0')
-{
-return (count);
-}
-}
-s++;
-}
-return (count);
+	unsigned int n = 0;
+	int r;
+
+	while (*s)
+	{
+		for (r = 0; accept[r]; r++)
+		{
+			if (*s == accept[r])
+			{
+				n++;
+				break;
+			}
+			else if (accept[r + 1] == '\0')
+				return (n);
+		}
+		s++;
+	}
+	return (n);
 }

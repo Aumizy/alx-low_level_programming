@@ -1,18 +1,13 @@
 #include "main.h"
-
 /**
-* _puts - function name
-* @str: string to be printed
-*
-* Description: a function that prints a string
-* Return: void
-*/
-
+ * _puts - prints a string, followed by a new line, to stdout
+ * @str: string to print
+ */
 void _puts(char *str)
 {
-while (*str)
-{	_putchar(*str);
-str++;
-}
-_putchar('\n');
+	while (*str != '\0')
+	{
+		_putchar(*str++);
+	}
+		_putchar('\n');
 }
